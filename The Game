@@ -1,0 +1,470 @@
+#include <map> //this allows you to use mapping in your program
+#include <string> //this allows you to use strings in your program
+#include <iostream> //this is what you need in every c++ program
+using namespace std; //using standard library
+
+int CompSci111(){
+    
+    int computerchoice; //initializes the variable computerchoice
+    srand(time(0)); //this initializes a random variable
+    computerchoice = (rand()%40)+1; //this sets the computerchoice equal to the random number generator
+    return computerchoice;
+}
+int CompSci121(){
+    
+    int computerchoice; //initializes the variable computerchoice
+    srand(time(0)); //this initializes a random variable
+    computerchoice = (rand()%45)+45; //this sets the computerchoice equal to the random number generator
+    return computerchoice;
+}
+
+int CompSci215(){
+    
+    int computerchoice; //initializes the variable computerchoice
+    srand(time(0)); //this initializes a random variable
+    computerchoice = (rand()%45)+90; //this sets the computerchoice equal to the random number generator
+    return computerchoice;
+}
+int studentquset(int num){
+    int computerchoice; //initializes the variable computerchoice
+    srand(time(0)); //this initializes a random variable
+    computerchoice = (rand()%num)+100; //this sets the computerchoice equal to the random number generator
+    return computerchoice;
+}
+int insert(string username){
+    map<int, string> question; //creating the map for the questions
+    map<string, string> answer;//map for the answer
+    cout<<"How many question would you like to enter?"<<endl;
+    int num;
+    cin>> num;
+    num+=100;
+    string Q, A;//Q is for question the user in entering A is for the answer
+    for(int i= 100; i<num ; i++){//adding in the questions
+        cout<<"Please enter the question."<<endl;
+        getline (cin, Q);
+        cout<<"What is the answer."<<endl;
+        getline (cin, A);
+        question.insert ( std::pair<int,string>(i,Q) );
+        answer.insert ( std::pair<string,string>(Q,A) );
+    }
+}
+
+string begin(){
+    string username;
+    cout<< "****************************************************************" <<endl;
+    cout<<"Welcome to your interactive Computer Science study guide!      *\n"
+    "This a tool that will help you study compter science core      *\n"
+    "topics from CIS 111, all the way to CIS 215! As the game       *\n"
+    "progresses the questions may seem to get a little bit more     *\n"
+    "diffucult, but don't worry, that's a good thing. That means    *\n"
+    "you're learning! We wish you the best of luck!!!               *\n"
+    "****************************************************************\n"<<endl;
+    cout<<"What is your name?"<<endl;
+    getline (cin, username);
+    return username;
+}
+int ready(string username){
+    string ready;
+    cout<<"\n\n\n\nHey "<<username<<"! Would you like to begin studying with us?\nEnter Y for yes or N for no."<<endl;
+    getline (cin, ready);
+    if((ready == "n") || (ready =="N")){//if the user does not wish to study
+        return 0; //username;
+    }
+    
+}
+int newQ(string username){
+    string ready;
+    cout<<"\n\n\n\nHey "<<username<<"! Would you like to add questions to the game? \nEnter Y for yes or N for no."<<endl;
+    getline (cin, ready);
+    if((ready == "y") || (ready =="Y")){//if the user does not wish to study
+        return 1; //username;
+    }
+    return 0;
+}
+int next(string username){
+    string ready;
+    cout<<"\n\n\n\nGreat Job "<<username<<"! You have finished this level. Would you like to continue studying with us?\nEnter Y for yes or N for no."<<endl;
+    getline (cin, ready);
+    if((ready == "n") || (ready =="N")){//if the user does not wish to study
+        return 0; //username;
+    }
+    
+}
+int bonus( string username){
+    
+}
+
+int levelOne(string username)
+    {
+        string Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13, Q14, Q15, Q16, Q17, Q18, Q19, Q20, Q21, Q22, Q23, Q24, Q25, Q26, Q27, Q28, Q29, Q30, Q31, Q32, Q33, Q34, Q35, Q36, Q37,Q38, Q39, Q40, Q41, Q42, Q43, Q44, Q45;
+    Q1 = "All the operations used to construct algorithms belong to one of only three categories: \n1.    Sequential \n2.    Conditional \nWhat is the third operation?\n\n"; //question 1
+    
+    Q2 = "What is the best definition of an algorithm?\nA. A well-ordered collection of unambiguous and effectively computable operations that, when executed, produces a result and halts in a finite amount of time.\nB. A list of instructions that can be effectively computable or it can be unsolveable.\nC. Instructions to accomplish a task.\nD. Computer language.\n"; //question 2
+    
+    Q3 = "What generation were transistors and core memories invented?\nA.     Second\nB.     First\nC.     Fifth\nD.    Third\n"; //question 3
+    
+    Q4 ="a "; //question 4
+    Q5 =" a"; //question 5
+    Q6 =" a"; //question 6
+    Q7 =" a"; //question 7
+    
+    Q8 = "Any operation on this computer that exceeds the maximum allowable value is called ___________ _________.\n"; //question 8
+    
+    Q9 = "In an  __________ representation, objects can take on any value.\n"; //question 9
+    
+    Q10 = "The __________ of the wave is a measure of its loudness—the greater the ________ the louder the sound.\n"; //question 10
+    Q11 = "The construction of computer circuits is based on the branch of mathematics and symbolic logic called _________   __________.\n"; //question 11
+    Q12 = "A _______ is an electronic device that operates on a collection of binary inputs to produce a binary output.\n"; //question 12
+    Q13 = "A _______ is a collection of logic gates that transforms a set of binary inputs into a set of binary outputs and in which the values of the outputs depend only on the current values of the inputs.\n"; //question 13
+    Q14 = "The study of algorithms is _________	___________.\n"; //question 14
+    
+    
+    
+    
+    Q15 = "The study of the efficiency of algorithms is called _________  __ __________.\n"; //question 15
+    Q16 =" ";
+    Q17 = "A  _______ can be thought of as a group of one or more, programming statements that collectively has a name.\n"; //question17
+    Q18 = " a"; //question 18
+    Q19 = "Every complete statement ends with a\nA)   Period\nB)   # symbol\nC)   semicolon\nD)   ending brace"; //question 19
+    Q20 = "Which of the following statements is correct?\nA)   #include (iostream)\nB)   #include {iostream}\nC)   #include <iostream>\nD)   #include [iostream]\nE)   All of the above\n"; //question 20
+    Q21 = "A _________ _____ is a statement that causes a function to execute. A function definition contains the statements that make up the function.\n"; //question 21
+    Q22 = "The ___ statement can cause other statements to execute only under certain conditions.\n"; //question 22
+    Q23 =" a"; //question 23
+    Q24 ="a "; //question 24
+    
+    
+    
+    
+    Q25 ="_______ ______ is breaking a program up into smaller, manageable functions. \n"; //question 25
+    Q26 ="A ________ collection of statements to perform a specific task.\n"; //question 26
+    Q27 ="__________: Values passed to a function.\n"; //question 27
+    Q28 ="__________: Variables in function that hold values passed as arguments.\n"; //question 28
+    Q29 ="_____  ___ _____: when an argument is passed to a function, a copy of its value is placed in the parameter.\n"; //question 29
+    Q30 ="______  ______: defined within a function or block; accessible only with the function or block.\n"; //question 30
+    Q31 ="______  ______: a variable defined outside all functions; it is accessible to all functions within its scope.\n"; //question 31
+    Q32 ="_______  ______: a named constant that can be used by every function in a program.\n"; //question 32
+    Q33 ="______ ______: values passed automatically if arguments are missing from the function call\n"; //question 33
+    Q34 ="_______  ______: an alias for another variable. Mechanism that allows a function to work with the original argument from the function call, not a copy of the argument\n"; //question 34
+    Q35 ="True or false: 4 Things Before A Compiler Runs it Must Know About a Function :\n1) name\n2) return type\n3) number of parameters\n4) data type of each parameter\n"; //question 35
+    Q36 ="True or false: \nThe address operator (&) returns the memory address of a variable.\n"; //question 36
+    Q37 ="a "; //question 37
+    
+    map<int, string> question; //creating the map for the questions
+    question.insert ( std::pair<int,string>(1,Q1) );
+    question.insert ( std::pair<int,string>(2,Q2) );
+    question.insert ( std::pair<int,string>(3,Q3) );
+    question.insert ( std::pair<int,string>(4,Q4) );
+    question.insert ( std::pair<int,string>(5,Q5) );
+    question.insert ( std::pair<int,string>(6,Q6) );
+    question.insert ( std::pair<int,string>(7,Q7) );
+    question.insert ( std::pair<int,string>(8,Q8) );
+    question.insert ( std::pair<int,string>(9,Q9) );
+    question.insert ( std::pair<int,string>(10,Q10) );
+    question.insert ( std::pair<int,string>(11,Q11) );
+    question.insert ( std::pair<int,string>(12,Q12) );
+    question.insert ( std::pair<int,string>(13,Q13) );
+    question.insert ( std::pair<int,string>(14,Q14) );
+    question.insert ( std::pair<int,string>(15,Q15) );
+    question.insert ( std::pair<int,string>(16,Q16) );
+    question.insert ( std::pair<int,string>(17,Q17) );
+    question.insert ( std::pair<int,string>(18,Q18) );
+    question.insert ( std::pair<int,string>(19,Q19) );
+    question.insert ( std::pair<int,string>(20,Q20) );
+    question.insert ( std::pair<int,string>(21,Q21) );
+    question.insert ( std::pair<int,string>(22,Q22) );
+    question.insert ( std::pair<int,string>(23,Q23) );
+    question.insert ( std::pair<int,string>(24,Q24) );
+    question.insert ( std::pair<int,string>(25,Q25) );
+    question.insert ( std::pair<int,string>(26,Q26) );
+    question.insert ( std::pair<int,string>(27,Q27) );
+    question.insert ( std::pair<int,string>(28,Q28) );
+    question.insert ( std::pair<int,string>(29,Q29) );
+    question.insert ( std::pair<int,string>(30,Q30) );
+    question.insert ( std::pair<int,string>(31,Q31) );
+    question.insert ( std::pair<int,string>(32,Q32) );
+    question.insert ( std::pair<int,string>(33,Q33) );
+    question.insert ( std::pair<int,string>(34,Q34) );
+    question.insert ( std::pair<int,string>(35,Q35) );
+    question.insert ( std::pair<int,string>(36,Q36) );
+    question.insert ( std::pair<int,string>(37,Q37) );
+    question.insert ( std::pair<int,string>(38,Q38) );
+    question.insert ( std::pair<int,string>(39,Q39) );
+    question.insert ( std::pair<int,string>(40,Q40) );
+    question.insert ( std::pair<int,string>(41,Q41) );
+    question.insert ( std::pair<int,string>(42,Q42) );
+    question.insert ( std::pair<int,string>(43,Q43) );
+    question.insert ( std::pair<int,string>(44,Q44) );
+    question.insert ( std::pair<int,string>(45,Q45) );
+    //oficially doen with level one staring level two
+ 
+    
+    map<string, string> answer; //this is passing in strings as vectors that will be used for the answer
+    answer[Q1] = "iterative"; //this is the answer to question 1
+    answer[Q2] = "a"; //this is the answer to question 2
+    answer[Q3] = "d"; //this is the answer to question 3
+    answer[Q4] ="a"; //this is the answer to question 4
+    answer[Q5] ="a"; //this is the answer to question 5
+    answer[Q6] ="a"; //this is the answer to question 6
+    answer[Q7] ="a"; //this is the answer to question 7
+    answer[Q8] = "arithmetic overflow"; //this is the answer to question 8
+    answer[Q9] = "analog"; //this is the answer to question 9
+    answer[Q10] = "amplitude"; //this is the answer to question 10
+    answer[Q11] = "boolean logic"; //this is the answer to question 11
+    answer[Q12] = "gate"; //this is the answer to question 12
+    answer[Q13] = "circuit"; //this is the answer to question 13
+    answer[Q14] = "computer science"; //this is the answer to question 14
+    answer[Q15] = "analysis of algorithms"; //this is the answer to question 15
+    answer[Q16] = "comment"; //this is the answer to question 16
+    answer[Q17] = "function"; //this is the answer to questino 17
+    answer[Q18] ="a"; //this is the answer to question 18
+    answer[Q19] = "c"; //this is the answer to question 19
+    answer[Q20] = "c"; //this is the answer to question 20
+    answer[Q21] = "function call"; //this is the answer to question 21
+    answer[Q22] = "if"; //this is the answer to question 22
+    answer[Q23] ="a"; //this is the answer to question 23
+    answer[Q24] ="a"; //this is the answer to question 24
+    answer[Q25] = "modular programming"; //this is the answer to question 25
+    answer[Q26] = "function"; //this is the answer to question 26
+    answer[Q27] = "arguments"; //this is the answer to question 27
+    answer[Q28] = "parameters"; //this is the answer to question 28
+    answer[Q29] = "pass by value"; //this is the answer to question 29
+    answer[Q30] = "local variable"; //this is the answer to question 30
+    answer[Q31] = "global variable"; //this is the answer to question 31
+    answer[Q32] = "global constant"; //this is the answer to question 32
+    answer[Q33] = "default argument"; //this is the answer to question 33
+    answer[Q34] = "refence variable"; //this is the answer to question 34
+    answer[Q35] = "true"; //this is the answer to question 35
+    answer[Q36] = "true"; //this is the answer to question 36
+    answer[Q37] ="a"; //this is the answer to question 37
+    
+    string QA, userinput, correcthoice;
+    const int SIZE = 9;
+    int comp[SIZE];
+    int count, score = 0;
+    int wrong = count = 0;
+    for (int i = 0; i < 10 && score < 10; i++) //start of for loop
+    {
+    redo:
+        int computerchoice = CompSci111();
+        comp[i] = computerchoice; //puting it into the array
+        //checking the array
+        for (int k = 0; k < i; k++){//to check it aginst evrything already in the array
+            if(comp[k] == computerchoice){ //checking to see if it is in the array
+                goto redo; // if it is it should go back and racall the the 111 genorator
+            }
+        }
+        QA = question[computerchoice];
+        cout<<computerchoice<<endl;
+        cout<<endl<<QA<<endl;//displays the computer choice
+        getline (cin, userinput);
+        //still need to make the input all to lower
+        for(int j = 0; j< userinput.length(); j++){
+            userinput[j] = tolower(userinput[j]);
+        }
+        
+        if (userinput != answer[QA]){
+            cout<<"That is incorrect\n"<<endl;
+            cout<<"The right answer was: "<<answer[QA]<<endl;//telling them the corect answer for the user's benfit.
+            score--;
+            wrong++;
+            if(score < 0 ){
+                cout<<"It may be time for you to hit the books :/"<<endl;
+                break;
+            }
+            cout<<"Score: "<<score<<endl;
+        }
+        else
+        {
+            score+=2;
+            cout<<"Score: "<<score<<endl;//keeping the user updated with their score
+            if(score >= 10){//qualify for level two...may the odds be ever in their favor
+                cout<<"Congrats "<<username<<" you have passed the first level!"<<endl; //leting them know that finished level one
+            }
+        }
+        count++;
+        if( count == 10 && score < 10){ //if you have gone through ten questions for the levell and the student did not get the min # correct to move on to the next level
+            cout<<"You did pretty good "<<username<<" but you have a little bit more studying to do"<<endl;
+            return 1;
+        }
+        cout<<"Count: "<<count<<endl; //need to be able to see how many they got wrong verse how many the have attempted
+        
+    }
+
+        return 0;
+    }
+int levelTwo( string username){
+    string Q46, Q47, Q48, Q49, Q50, Q51, Q52, Q53, Q54, Q55, Q56, Q57, Q58, Q59, Q60, Q61, Q62, Q63, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72, Q73, Q74, Q75, Q76, Q77, Q78, Q79, Q80, Q81, Q82, Q83, Q84, Q85, Q86, Q87, Q88, Q89, Q90;
+    Q46 = "All the operations used to construct algorithms belong to one of only three categories: \n1.    Sequential \n2.    Conditional \nWhat is the third operation?\n\n"; //question 1
+    
+    Q47 = "What is the best definition of an algorithm?\nA. A well-ordered collection of unambiguous and effectively computable operations that, when executed, produces a result and halts in a finite amount of time.\nB. A list of instructions that can be effectively computable or it can be unsolveable.\nC. Instructions to accomplish a task.\nD. Computer language.\n"; //question 2
+    
+    Q48 = "What generation were transistors and core memories invented?\nA.     Second\nB.     First\nC.     Fifth\nD.    Third\n"; //question 3
+    
+    Q49 ="a "; //question 4
+    Q50 =" a"; //question 5
+    Q51 =" a"; //question 6
+    Q52 =" a"; //question 7
+    
+    Q53 = "Any operation on this computer that exceeds the maximum allowable value is called ___________ _________.\n"; //question 8
+    
+    Q54 = "In an  __________ representation, objects can take on any value.\n"; //question 9
+    
+    Q55 = "The __________ of the wave is a measure of its loudness—the greater the ________ the louder the sound.\n"; //question 10
+    Q56 = "The construction of computer circuits is based on the branch of mathematics and symbolic logic called _________   __________.\n"; //question 11
+    Q57 = "A _______ is an electronic device that operates on a collection of binary inputs to produce a binary output.\n"; //question 12
+    Q58 = "A _______ is a collection of logic gates that transforms a set of binary inputs into a set of binary outputs and in which the values of the outputs depend only on the current values of the inputs.\n";
+    Q59 = "The study of algorithms is _________	___________.\n";     
+    
+    
+    Q60 = "The study of the efficiency of algorithms is called _________  __ __________.\n"; //question 15
+    Q61 =" ";
+    Q62 = "A  _______ can be thought of as a group of one or more, programming statements that collectively has a name.\n"; //question17
+    Q63 = " a"; //question 18
+    Q64 = "Every complete statement ends with a\nA)   Period\nB)   # symbol\nC)   semicolon\nD)   ending brace"; //question 19
+    Q65 = "Which of the following statements is correct?\nA)   #include (iostream)\nB)   #include {iostream}\nC)   #include <iostream>\nD)   #include [iostream]\nE)   All of the above\n"; //question 20
+    Q66 = "A _________ _____ is a statement that causes a function to execute. A function definition contains the statements that make up the function.\n"; //question 21
+    Q67 = "The ___ statement can cause other statements to execute only under certain conditions.\n"; //question 22
+    Q68 =" a"; //question 23
+    Q69 ="a "; //question 24
+    
+    
+    
+    
+    Q70 ="_______ ______ is breaking a program up into smaller, manageable functions. \n"; 
+    Q71 ="A ________ collection of statements to perform a specific task.\n";     Q72 ="__________: Values passed to a function.\n"; 
+    Q73 ="__________: Variables in function that hold values passed as arguments.\n"; 
+    Q74 ="_____  ___ _____: when an argument is passed to a function, a copy of its value is placed in the parameter.\n"; 
+    Q75 ="______  ______: defined within a function or block; accessible only with the function or block.\n"; 
+    Q76 ="______  ______: a variable defined outside all functions; it is accessible to all functions within its scope.\n"; 
+    Q77 ="_______  ______: a named constant that can be used by every function in a program.\n"; 
+    Q78 ="______ ______: values passed automatically if arguments are missing from the function call\n"; 
+    Q79 ="_______  ______: an alias for another variable. Mechanism that allows a function to work with the original argument from the function call, not a copy of the argument\n"; 
+    Q80 ="True or false: 4 Things Before A Compiler Runs it Must Know About a Function :\n1) name\n2) return type\n3) number of parameters\n4) data type of each parameter\n"; 
+    Q81 ="True or false: \nThe address operator (&) returns the memory address of a variable.\n"; 
+    Q82 ="a "; 
+    map<string, string> answer;
+    answer[Q46] = "iterative"; //this is the answer to question 1
+    answer[Q47] = "a"; //this is the answer to question 2
+    answer[Q48] = "d"; //this is the answer to question 3
+    answer[Q49] ="a"; //this is the answer to question 4
+    answer[Q50] ="a"; //this is the answer to question 5
+    answer[Q51] ="a"; //this is the answer to question 6
+    answer[Q52] ="a"; //this is the answer to question 7
+    answer[Q53] = "arithmetic overflow"; //this is the answer to question 8
+    answer[Q54] = "analog"; //this is the answer to question 9
+    answer[Q55] = "amplitude"; //this is the answer to question 10
+    answer[Q56] = "boolean logic"; //this is the answer to question 11
+    answer[Q57] = "gate"; //this is the answer to question 12
+    answer[Q58] = "circuit"; //this is the answer to question 13
+    answer[Q59] = "computer science"; //this is the answer to question 14
+    answer[Q60] = "analysis of algorithms"; //this is the answer to question 15
+    answer[Q61] = "comment"; //this is the answer to question 16
+    answer[Q62] = "function"; //this is the answer to questino 17
+    answer[Q63] ="a"; //this is the answer to question 18
+    answer[Q64] = "c"; //this is the answer to question 19
+    answer[Q65] = "c"; //this is the answer to question 20
+    answer[Q66] = "function call"; //this is the answer to question 21
+    answer[Q67] = "if"; //this is the answer to question 22
+    answer[Q68] ="a"; //this is the answer to question 23
+    answer[Q69] ="a"; //this is the answer to question 24
+    answer[Q70] = "modular programming"; //this is the answer to question 25
+    answer[Q71] = "function"; //this is the answer to question 26
+    answer[Q72] = "arguments"; //this is the answer to question 27
+    answer[Q73] = "parameters"; //this is the answer to question 28
+    answer[Q74] = "pass by value"; //this is the answer to question 29
+    answer[Q75] = "local variable"; //this is the answer to question 30
+    answer[Q76] = "global variable"; //this is the answer to question 31
+    answer[Q77] = "global constant"; //this is the answer to question 32
+    answer[Q78] = "default argument"; //this is the answer to question 33
+    answer[Q79] = "refence variable"; //this is the answer to question 34
+    answer[Q80] = "true"; //this is the answer to question 35
+    answer[Q81] = "true"; //this is the answer to question 36
+    answer[Q82] ="a"; //this is the answer to question 37
+
+    
+    map<int, string> question; //creating the map for the questions
+    question.insert ( std::pair<int,string>(46,Q46) );
+    question.insert ( std::pair<int,string>(47,Q47) );
+    question.insert ( std::pair<int,string>(48,Q48) );
+    question.insert ( std::pair<int,string>(49,Q49) );
+    question.insert ( std::pair<int,string>(50,Q50) );
+    question.insert ( std::pair<int,string>(51,Q51) );
+    question.insert ( std::pair<int,string>(52,Q52) );
+    question.insert ( std::pair<int,string>(53,Q53) );
+    question.insert ( std::pair<int,string>(54,Q54) );
+    question.insert ( std::pair<int,string>(55,Q55) );
+    question.insert ( std::pair<int,string>(56,Q56) );
+    question.insert ( std::pair<int,string>(57,Q57) );
+    question.insert ( std::pair<int,string>(58,Q58) );
+    question.insert ( std::pair<int,string>(59,Q59) );
+    question.insert ( std::pair<int,string>(60,Q60) );
+    question.insert ( std::pair<int,string>(61,Q61) );
+    question.insert ( std::pair<int,string>(62,Q62) );
+    question.insert ( std::pair<int,string>(63,Q63) );
+    question.insert ( std::pair<int,string>(64,Q64) );
+    question.insert ( std::pair<int,string>(65,Q65) );
+    question.insert ( std::pair<int,string>(66,Q66) );
+    question.insert ( std::pair<int,string>(67,Q67) );
+    question.insert ( std::pair<int,string>(68,Q68) );
+    question.insert ( std::pair<int,string>(69,Q69) );
+    question.insert ( std::pair<int,string>(70,Q70) );
+    question.insert ( std::pair<int,string>(71,Q71) );
+    question.insert ( std::pair<int,string>(72,Q72) );
+    question.insert ( std::pair<int,string>(73,Q73) );
+    question.insert ( std::pair<int,string>(74,Q74) );
+    question.insert ( std::pair<int,string>(75,Q75) );
+    question.insert ( std::pair<int,string>(76,Q76) );
+    question.insert ( std::pair<int,string>(77,Q77) );
+    question.insert ( std::pair<int,string>(78,Q78) );
+    question.insert ( std::pair<int,string>(79,Q79) );
+    question.insert ( std::pair<int,string>(80,Q80) );
+    question.insert ( std::pair<int,string>(81,Q81) );
+    question.insert ( std::pair<int,string>(82,Q82) );
+    question.insert ( std::pair<int,string>(83,Q83) );
+    question.insert ( std::pair<int,string>(84,Q84) );
+    question.insert ( std::pair<int,string>(85,Q85) );
+    question.insert ( std::pair<int,string>(86,Q86) );
+    question.insert ( std::pair<int,string>(87,Q87) );
+    question.insert ( std::pair<int,string>(88,Q88) );
+    question.insert ( std::pair<int,string>(89,Q89) );
+    question.insert ( std::pair<int,string>(90,Q90) );
+    
+    
+    return 0;
+}
+int main(){
+    string username = begin();
+    int resp, response = ready(username);
+    if (response == 0){
+        return 0;
+    }
+    else{
+        resp = newQ(username);
+        if (resp == 1){
+            insert(username);
+        }
+        int newl =  levelOne(username);
+        if (newl == 0);{
+            response = next(username);
+            if (response == 0){
+                return 0;
+            }
+            newl =  levelTwo(username);
+            if (newl == 0);{
+                response = next(username);
+                if (response == 0){
+                    return 0;
+                }
+            }
+            if (resp == 1){
+            newl =  bonus(username);
+            if (newl == 0);{
+                response = next(username);
+                if (response == 0){
+                    return 0;
+                    }
+                }
+            }
+        }
+    }
+}
