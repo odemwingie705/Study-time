@@ -25,6 +25,12 @@ int CompSci215(){
     computerchoice = (rand()%45)+90; //this sets the computerchoice equal to the random number generator
     return computerchoice;
 }
+string lower(string userinput){
+    for(int j = 0; j< userinput.length(); j++){
+        userinput[j] = tolower(userinput[j]);
+    }
+    return userinput;
+}
 int studentquset(int num){
     int computerchoice; //initializes the variable computerchoice
     srand(time(0)); //this initializes a random variable
@@ -44,8 +50,8 @@ int insert(string username){
         getline (cin, Q);
         cout<<"What is the answer."<<endl;
         getline (cin, A);
-        question.insert ( std::pair<int,string>(i,Q) );
-        answer.insert ( std::pair<string,string>(Q,A) );
+        question.insert ( std::pair<int,string>(i,Q) );//putting the questiong into the map 
+        answer.insert ( std::pair<string,string>(Q,A) );//putting the name into a map
     }
 }
 
@@ -65,7 +71,7 @@ string begin(){
 }
 int ready(string username){
     string ready;
-    cout<<"\n\n\n\nHey "<<username<<"! Would you like to begin studying with us?\nEnter Y for yes or N for no."<<endl;
+    cout<<"\n\n\n\nHey "<<username<<"! Would you like to begin studying with us?\nEnter Y to START or N to EXIT."<<endl;
     getline (cin, ready);
     if((ready == "n") || (ready =="N")){//if the user does not wish to study
         return 0; //username;
@@ -257,11 +263,7 @@ int levelOne(string username)
         cout<<computerchoice<<endl;
         cout<<endl<<QA<<endl;//displays the computer choice
         getline (cin, userinput);
-        //still need to make the input all to lower
-        for(int j = 0; j< userinput.length(); j++){
-            userinput[j] = tolower(userinput[j]);
-        }
-        
+        userinput = lower(userinput);//calling the fuction to turn the user's answer to all lower case
         if (userinput != answer[QA]){
             cout<<"That is incorrect\n"<<endl;
             cout<<"The right answer was: "<<answer[QA]<<endl;//telling them the corect answer for the user's benfit.
@@ -286,14 +288,15 @@ int levelOne(string username)
             cout<<"You did pretty good "<<username<<" but you have a little bit more studying to do"<<endl;
             return 1;
         }
-        cout<<"Count: "<<count<<endl; //need to be able to see how many they got wrong verse how many the have attempted
+        //cout<<"Count: "<<count<<endl; //need to be able to see how many they got wrong verse how many the have attempted
         
     }
 
         return 0;
     }
 int levelTwo( string username){
-    string Q46, Q47, Q48, Q49, Q50, Q51, Q52, Q53, Q54, Q55, Q56, Q57, Q58, Q59, Q60, Q61, Q62, Q63, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72, Q73, Q74, Q75, Q76, Q77, Q78, Q79, Q80, Q81, Q82, Q83, Q84, Q85, Q86, Q87, Q88, Q89, Q90;
+    string Q46, Q47, Q48, Q49, Q50, Q51, Q52, Q53, Q54, Q55, Q56, Q57, Q58, Q59, Q60, Q61, Q62, Q63, Q64, Q65, Q66, Q67, Q68, Q69, Q70, Q71, Q72, Q73, Q74, Q75, Q76, Q77, Q78, Q79, Q80, Q81, Q82, Q83, Q84, Q85, Q86, Q87, Q88, Q89, Q90,userinput, QA;
+    int score, wrong, count;
     Q46 = "All the operations used to construct algorithms belong to one of only three categories: \n1.    Sequential \n2.    Conditional \nWhat is the third operation?\n\n"; //question 1
     
     Q47 = "What is the best definition of an algorithm?\nA. A well-ordered collection of unambiguous and effectively computable operations that, when executed, produces a result and halts in a finite amount of time.\nB. A list of instructions that can be effectively computable or it can be unsolveable.\nC. Instructions to accomplish a task.\nD. Computer language.\n"; //question 2
@@ -326,8 +329,6 @@ int levelTwo( string username){
     Q67 = "The ___ statement can cause other statements to execute only under certain conditions.\n"; //question 22
     Q68 =" a"; //question 23
     Q69 ="a "; //question 24
-    
-    
     
     
     Q70 ="_______ ______ is breaking a program up into smaller, manageable functions. \n"; 
@@ -428,8 +429,50 @@ int levelTwo( string username){
     question.insert ( std::pair<int,string>(88,Q88) );
     question.insert ( std::pair<int,string>(89,Q89) );
     question.insert ( std::pair<int,string>(90,Q90) );
-    
-    
+    const int SIZE = 9;
+    int comp[SIZE];
+        count = 0; //count is just s we can keep track of how many questions we asked in this level
+        for (int i = 0; i < 10 && score < 31 ; i++) //initalize i to 0 and while i is less than ten and the score is not greater than 45 you should continue to go through the loop each time incrementing i by one
+        {
+        redo2: //where I want the computer to go back to if the number called in the psedo erandom number generator is already in the array that i have created
+            int computerchoice = CompSci121();
+            comp[i] = computerchoice; //puting it into the array. It doesnt matter that it is the same array because i started at zero gain so it is going to copy over it
+            
+            //checking the array
+            for (int k = 0; k < i; k++){//to check it aginst evrything already in the array
+                if(comp[k] == computerchoice){ //checking to see if it is in the array
+                    goto redo2; // if it is it should go back and racall the the 121 genorator
+                }
+            }
+            QA = question[computerchoice]; //the answer to the question
+            cout<<computerchoice<<endl;//DELETE SOON I NEED IT TO KNOW THE ANSWER WHEN TEST PLAYING THE GAME
+            cout<<endl<<QA<<endl;//displays the computer choice
+            getline (cin, userinput);
+            userinput = lower(userinput);
+            if (userinput != answer[QA]){
+                cout<<"That is incorrect\n"<<endl;
+                cout<<"The right answer was: "<<answer[QA]<<endl;//telling them the corect answer for the user's benfit.
+                score-=2;
+                wrong++;
+                if(score < 0 ){
+                    cout<<"It may be time for you to hit the books :/"<<endl;
+                    break;
+                }
+                cout<<"Score: "<<score<<endl;
+            }
+            else
+            {
+                score+=4;
+                cout<<"Score: "<<score<<endl;//keeping the user updated with their score
+                if(score >= 30){//qualify for level three...best of luck
+                    cout<<"Congrats "<<username<<" you have passed the second level!"<<endl; //leting them know that finished level one
+                }
+            }
+            count++;
+            if( count == 10 && score < 5){ //if you have gone through ten questions for the levell and the student did not get the min # correct to move on to the next level
+                cout<<"You did pretty good "<<username<<" but you have a little bit more studying to do"<<endl;
+            }
+        }
     return 0;
 }
 int main(){
